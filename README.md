@@ -2,16 +2,7 @@
 
 ## Project Summary
 
-In this project you will build and explain a small music recommender system.
-
-Your goal is to:
-
-- Represent songs and a user "taste profile" as data
-- Design a scoring rule that turns that data into recommendations
-- Evaluate what your system gets right and wrong
-- Reflect on how this mirrors real world AI recommenders
-
-Replace this paragraph with your own summary of what your version does.
+I understand that modern real-world recommendations use a hybrid model of collaborative filtering and content-based filtering, bridging recommendations from people alike and songs alike. My algorithm, as I am a very instrumental person, will prioritize scores calculated from genre, mood, danceability and acousticness, weighted in that order. UserProfile will list preferences in these attributes as to make matching possible with the attributes given to a Song
 
 ---
 
@@ -28,6 +19,8 @@ Some prompts to answer:
 - How do you choose which songs to recommend
 
 You can include a simple diagram or bullet list if helpful.
+
+the algorithm will involve the following: total = 0.4*genre_score + 0.3*mood_score + 0.18*dance_score + 0.12*acoustic_score
 
 ---
 
