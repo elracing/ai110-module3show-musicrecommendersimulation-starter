@@ -22,6 +22,47 @@ You can include a simple diagram or bullet list if helpful.
 
 the algorithm will involve the following: total = 0.4*genre_score + 0.3*mood_score + 0.18*dance_score + 0.12*acoustic_score
 
+here is the mermaid.JS flowchart:
+
+flowchart TD
+    A["User Prefs (genre, mood, energy, tempo, danceability, acousticness)"] --> B["Load songs.csv"]
+    B --> C["For each song"]
+    C --> D["Compare genre"]
+    C --> E["Compare mood"]
+    C --> F["Compute energy similarity"]
+    C --> G["Apply tie-breakers (tempo, danceability, acousticness)"]
+    D --> H["Add genre points (+2.0 if match)"]
+    E --> I["Add mood points (+1.0 if match)"]
+    F --> J["Add energy score (2.0 * max(0, 1 - abs(song_energy - target_energy)))"]
+    G --> K["Add bonus points (+0.5 each when matched)"]
+    H --> L["Total score for song"]
+    I --> L
+    J --> L
+    K --> L
+    L --> M["Collect scored songs"]
+    M --> N["Sort by score descending"]
+    N --> O["Output top K recommendations"]
+
+
+for a visual, look for ![
+](<Song Recommendation Scoring-2026-04-13-142603.png>)
+
+
+The song scoring algorithm will look like this:
+
+Genre match: +2.0
+Mood match: +1.0
+Energy similarity: up to +2.0 using:
+energy_score = 2.0 * max(0, 1 - abs(song_energy - target_energy))
+Optional tie-breakers:
+Tempo within ±10 bpm of target: +0.5
+Danceability near target or user preference: +0.5
+Acousticness match for mellow user intent: +0.5
+
+This will definitely be more biased towards the categories of the music, rather than the individual traits of such.
+
+
+
 ---
 
 ## Getting Started
