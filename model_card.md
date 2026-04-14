@@ -36,7 +36,7 @@ Prompts:
 
 Avoid code here. Pretend you are explaining the idea to a friend who does not program.
 
-
+each song is scored using a weighted system in this order: genre > mood > energy >, with some equally significant poitns added if the song has a matching tempo, danceability and is/is not acoustic. The user lists their preferences in each adn the model attempts to match the songs that more closely matches those preferences using ranks by scoring. 
 
 
 ---
@@ -52,6 +52,8 @@ Prompts:
 - Did you add or remove data  
 - Are there parts of musical taste missing in the dataset  
 
+There are 18 songs in the data set right now, some songs were added afterwards to diversify the genres. The model does try to incorporate many genres, but these can be oddly specific or broad and will miss certain genres, hence some testing was done with phantom genres that caused mismatches. 
+
 ---
 
 ## 5. Strengths  
@@ -63,6 +65,8 @@ Prompts:
 - User types for which it gives reasonable results  
 - Any patterns you think your scoring captures correctly  
 - Cases where the recommendations matched your intuition  
+
+The system does work well when it does work. If your genre is well established in the list, it will actually match the preferences accordingly as long as the profile does to contain contradicting information, such as a preference over high energy metal music but low danceability witha  preference to acoustics. 
 
 ---
 
@@ -109,6 +113,8 @@ Prompts:
 - Improving diversity among the top results  
 - Handling more complex user tastes  
 
+A larger song list with a much more complete genre list would benefit this model greatly. The recommendations are explained clearly as they can be, but the most immediate improvement would simply be adding more genres and more diverse music as to not have profiles that rely exclusively on one trait for the music sicne none of the songs match all of the profile.
+
 ---
 
 ## 9. Personal Reflection  
@@ -120,3 +126,5 @@ Prompts:
 - What you learned about recommender systems  
 - Something unexpected or interesting you discovered  
 - How this changed the way you think about music recommendation apps  
+
+I learned about the hybrid nature of recommender systems and how locally sourced data and community sourced data overall improves the recommendations given. I'm impressed with how popular systems handle edge cases and contradicting cases, something my own model cannot handle well. This has changed how I listen to music, as i'm now more aware that the system is constantly listening to my history in order to recommend me music. 
