@@ -129,7 +129,7 @@ def recommend_songs(user_prefs: Dict, songs: List[Dict], k: int = 5) -> List[Tup
     def score(song: Dict) -> float:
         score_value = 0.0
         score_value += 2.0 if song["genre"] == user_prefs.get("genre") else 0.0
-        # score_value += 1.0 if song["mood"] == user_prefs.get("mood") else 0.0
+        score_value += 1.0 if song["mood"] == user_prefs.get("mood") else 0.0
         score_value += _energy_similarity(song["energy"], user_prefs.get("energy", 0.0))
 
         if "tempo" in user_prefs and abs(song["tempo_bpm"] - user_prefs["tempo"]) <= 10:
