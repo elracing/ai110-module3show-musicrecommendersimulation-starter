@@ -112,6 +112,15 @@ Use this section to document the experiments you ran. For example:
 - What happened when you added tempo or valence to the score
 - How did your system behave for different types of users
 
+
+these are the results of running adversarial profiles:
+
+![alt text](image-1.png)
+![alt text](image-2.png)
+
+
+as an experiment, I commented out mood match and it made the results less appropiate in tone, it eliminated one of the factors used in tie breakers and let energy dominate in some profiles.
+
 ---
 
 ## Limitations and Risks
@@ -126,6 +135,8 @@ Examples:
 
 You will go deeper on this in your model card.
 
+The song list is not very big, and completely misses out on many genres & categories. 
+
 ---
 
 ## Reflection
@@ -138,6 +149,9 @@ Write 1 to 2 paragraphs here about what you learned:
 
 - about how recommenders turn data into predictions
 - about where bias or unfairness could show up in systems like this
+
+I have learned how recommenders use a combination of dtata regarding music to recommend songs to listeners using their music history. Some of the 
+best models use a combination of data from songs and data from other similarly ranked listeners to give out song recommendations. This, however, can lead to some serious biases in what kind of music is recommended as the popularity of the songs would play a major role in what is recommended, leaving "unexplored" music out. My model, which uses local data, shows strongly how the little variety and a weak scoring system can lead to biases and recommendations that do not objectively match one's taste profile. 
 
 
 ---

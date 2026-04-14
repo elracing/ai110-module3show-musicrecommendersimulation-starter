@@ -5,6 +5,8 @@
 Give your model a short, descriptive name.  
 Example: **VibeFinder 1.0**  
 
+music Judge 
+
 ---
 
 ## 2. Intended Use  
@@ -16,6 +18,8 @@ Prompts:
 - What kind of recommendations does it generate  
 - What assumptions does it make about the user  
 - Is this for real users or classroom exploration  
+
+The recommender is meant to recommend music from a locally sourced list to listeners based on their trait preferences, using a scoring system to match users with songs that match their preferences. It is mostly a thought experiment, as the data is very small and it would need a much bigger data set to appropiately recommend songs to a person.
 
 ---
 
@@ -31,6 +35,9 @@ Prompts:
 - What changes did you make from the starter logic  
 
 Avoid code here. Pretend you are explaining the idea to a friend who does not program.
+
+
+
 
 ---
 
@@ -70,6 +77,8 @@ Prompts:
 - Cases where the system overfits to one preference  
 - Ways the scoring might unintentionally favor some users  
 
+After some experimentation by removing the mood scoring from the model, the model over-relies on energy to match the users with songs. Mood served as a tie breaker and removing it meant that energy matched songs dominated the model. There were also some songs that consistently ranked very high due to this. 
+
 ---
 
 ## 7. Evaluation  
@@ -84,6 +93,8 @@ Prompts:
 - Any simple tests or comparisons you ran  
 
 No need for numeric metrics unless you created some.
+
+Some of the surprises came from the adversarial profiles, specifically the the silent acoustic cotnradiction where low acoustic rated music that were "metal, ferocious" songs would be the first match, along with other similarly rated songs. 
 
 ---
 
