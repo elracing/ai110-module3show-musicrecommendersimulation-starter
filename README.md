@@ -61,6 +61,10 @@ Acousticness match for mellow user intent: +0.5
 
 This will definitely be more biased towards the categories of the music, rather than the individual traits of such.
 
+this is an example of the cli output:
+
+![alt text](image.png)
+
 
 
 ---
